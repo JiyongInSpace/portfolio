@@ -1,0 +1,160 @@
+{
+    "projects":[
+        {
+            "num": "PROJECT-01",
+            "type": "Project",
+            "title": "Coinnet",
+            "simpleDetail": "react와 axios, 코인사이트api를 이용해 코인의 종류, 거래소 목록, 등락, 코인의 정보 등을 확인할 수 있도록 만들었습니다.",
+            "modal":{
+                "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolorum incidunt? Esse fugit deserunt, eaque obcaecati beatae minima odio alias.",
+                "links": {
+                    "git": "https://github.com/JiyongInSpace/coinnet",
+                    "deploy": "https://jiyonginspace.github.io/coinnet/#/"
+                },
+                "stacks": [
+                    {
+                        "name": "react", "bgcolor": "61DAFB", "fontcolor":"black", "icon": "react"
+                    }
+                ]
+            }
+        },
+        {
+            "num": "PROJECT-02",
+            "type": "Project",
+            "title": "project2",
+            "simpleDetail": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "modal":{
+                "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolorum incidunt? Esse fugit deserunt, eaque obcaecati beatae minima odio alias.",
+                "links": {
+                    "git": "https://github.com/JiyongInSpace/",
+                    "deploy": "https://jiyonginspace.github.io/coinnet/#/"
+                },
+                "stacks": [
+                    {
+                        "name": "react", "bgcolor": "61DAFB", "fontcolor":"black", "icon": "react"
+                    },
+                    {
+                        "name": "firebase", "bgcolor": "FFCA28", "fontcolor":"black", "icon": "firebase"
+                    }
+                ]
+            }
+        },
+        {
+            "num": "PROJECT-03",
+            "type": "Project",
+            "title": "Atomy",
+            "simpleDetail": "바닐라JS를 이용한 풀페이지스크롤 클론 사이트입니다.",
+            "modal":{
+                "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolorum incidunt? Esse fugit deserunt, eaque obcaecati beatae minima odio alias.",
+                "links": {
+                    "git": "https://github.com/JiyongInSpace/atomy",
+                    "deploy": "https://jiyonginspace.github.io/atomy/"
+                },
+                "stacks": [
+                    {
+                        "name": "html", "bgcolor": "E34F26", "fontcolor":"white", "icon": "html5"
+                    },
+                    {
+                        "name": "sass", "bgcolor": "CC6699", "fontcolor":"white", "icon": "sass"
+                    },
+                    {
+                        "name": "javascript", "bgcolor": "F7DF1E", "fontcolor":"black", "icon": "javascript"
+                    }
+                ]
+            }
+        }
+        
+    ],
+    "practices":[
+        {
+            "num": "PRACTICE-01",
+            "type": "Practice",
+            "title": "Yongcha",
+            "simpleDetail": "[기능학습] react, axios, 영화DBapi 등을 이용한 영화 정보 사이트",
+            "modal":{
+                "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolorum incidunt? Esse fugit deserunt, eaque obcaecati beatae minima odio alias.",
+                "links": {
+                    "git": "https://github.com/JiyongInSpace/yongcha",
+                    "deploy": "https://brave-tesla-48f5ef.netlify.app/"
+                },
+                "stacks": [
+                    {
+                        "name": "react", "bgcolor": "61DAFB", "fontcolor":"black", "icon": "react"
+                    }
+                ]
+            }
+        },
+        {
+            "num": "PRACTICE-02",
+            "type": "Practice",
+            "title": "ToDoMate",
+            "simpleDetail": "[협업프로젝트] 챌린지미션, 채팅봇 등이 있는 날짜별 투두리스트",
+            "modal":{
+                "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolorum incidunt? Esse fugit deserunt, eaque obcaecati beatae minima odio alias.",
+                "links": {
+                    "git": "https://github.com/JiyongInSpace/",
+                    "deploy": "https://brave-tesla-48f5ef.netlify.app/"
+                },
+                "stacks": [
+                    {
+                        "name": "html", "bgcolor": "E34F26", "fontcolor":"white", "icon": "html5"
+                    },
+                    {
+                        "name": "sass", "bgcolor": "CC6699", "fontcolor":"white", "icon": "sass"
+                    },
+                    {
+                        "name": "javascript", "bgcolor": "F7DF1E", "fontcolor":"black", "icon": "javascript"
+                    }
+                ]
+            }
+        },
+        {
+            "num": "PRACTICE-03",
+            "type": "Practice",
+            "title": "Minideco",
+            "simpleDetail": "[기능학습] 디자인부터 시작해 다양한 기능을 넣은 쇼핑몰 사이트",
+            "modal":{
+                "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolorum incidunt? Esse fugit deserunt, eaque obcaecati beatae minima odio alias.",
+                "links": {
+                    "git": "https://github.com/JiyongInSpace/minideco",
+                    "deploy": "https://jiyonginspace.github.io/minideco/"
+                },
+                "stacks": [
+                    {
+                        "name": "html", "bgcolor": "E34F26", "fontcolor":"white", "icon": "html5"
+                    },
+                    {
+                        "name": "css", "bgcolor": "1572B6", "fontcolor":"white", "icon": "css3"
+                    },
+                    {
+                        "name": "javascript", "bgcolor": "F7DF1E", "fontcolor":"black", "icon": "javascript"
+                    }
+                ]
+            }
+        },
+        {
+            "num": "PRACTICE-04",
+            "type": "Practice",
+            "title": "Momentum",
+            "simpleDetail": "[기능학습] 간단한 정보를 확인할 수 있는 크롬 대기화면 사이트",
+            "modal":{
+                "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolorum incidunt? Esse fugit deserunt, eaque obcaecati beatae minima odio alias.",
+                "links": {
+                    "git": "https://github.com/JiyongInSpace/momentum",
+                    "deploy": "https://jiyonginspace.github.io/momentum/"
+                },
+                "stacks": [
+                    {
+                        "name": "html", "bgcolor": "E34F26", "fontcolor":"white", "icon": "html5"
+                    },
+                    {
+                        "name": "css", "bgcolor": "1572B6", "fontcolor":"white", "icon": "css3"
+                    },
+                    {
+                        "name": "javascript", "bgcolor": "F7DF1E", "fontcolor":"black", "icon": "javascript"
+                    }
+                ]
+            }
+        }
+    ]
+}
