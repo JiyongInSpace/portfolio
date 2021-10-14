@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import ThankyouMessage from '../Components/ThankyouMessage';
-
+import paper from '../assets/paper.jpg';
 import kakaostamp from "../assets/kakao_stamp.png";
 import githubstamp from "../assets/git_stamp.png";
 
@@ -12,7 +12,7 @@ export default ({tab}) => {
             <Container>
                 <Title>CONTACT</Title>
                 <Subtitle>발전하는 신입개발자가 필요하시다면 아래 우편을 확인해주세요.</Subtitle>
-                <Postcard>
+                <Postcard img={paper}>
                     <Form
                         className="gform"
                         method="POST"
@@ -78,7 +78,7 @@ const Title = styled.h2`
 const Subtitle = styled.p`
     text-align: center;
     color: gray;
-    margin: 50px 0;
+    margin: 30px 0 50px 0;
 `
 const Postcard = styled.section`
     width: 900px; height: 500px;
@@ -88,6 +88,7 @@ const Postcard = styled.section`
     display: grid;
     grid-template-columns: 60% 40%;
     grid-template-rows: 30% 70%;
+    background: white;
     @media ${props => props.theme.tabletL}{
         width: 100%; height: unset;
     }
@@ -124,7 +125,7 @@ const CardTextTitle = styled.h4`
         font-size: 18px;
     }
 `;
-const CardTextContent = styled.p`
+const CardTextContent = styled.div`
     font-size: 1.2em;
     margin: 25px 0 10px 0;
     padding: 0 0 0 20px;

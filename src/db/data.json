@@ -2,11 +2,13 @@
     "projects":[
         {
             "num": "PROJECT-01",
+            "color": "gold",
             "type": "Project",
             "title": "Coinnet",
-            "simpleDetail": "react와 axios, 코인사이트api를 이용해 코인의 종류, 거래소 목록, 등락, 코인의 정보 등을 확인할 수 있도록 만들었습니다.",
+            "simpleDetail": "[프로젝트] 가즈아! 지금 코인은 얼마?",
             "modal":{
-                "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolorum incidunt? Esse fugit deserunt, eaque obcaecati beatae minima odio alias.",
+                "detail": "리액트를 학습하며 배운 내용에 익숙해지기 위해 웹 사이트를 만들어 보고싶었습니다. 코인정보api를 axios로 불러왔습니다. 우선 클래스컴포넌트로 만든 뒤, 리액트 훅으로 변경하면서 훅을 익히는 기회가 되었습니다. ",
+                "function": "코인의 현재 가격과 등락 상태, 코인거래소의 목록과 정보, 코인의 순위 및 자세한 정보 확인 등 (api 출처: https://Coinpaprika.com)",
                 "links": {
                     "git": "https://github.com/JiyongInSpace/coinnet",
                     "deploy": "https://jiyonginspace.github.io/coinnet/#/"
@@ -20,14 +22,16 @@
         },
         {
             "num": "PROJECT-02",
+            "color": "lightgray",
             "type": "Project",
-            "title": "project2",
-            "simpleDetail": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "title": "Portfolio",
+            "simpleDetail": "[프로젝트] 저를 소개합니다. 예쁘게 봐주세요!",
             "modal":{
-                "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolorum incidunt? Esse fugit deserunt, eaque obcaecati beatae minima odio alias.",
+                "detail": "포트폴리오 용도로 만든 리액트 사이트입니다. 제작 하기 전, 포트폴리오로 어떻게하면 나를 좀 더 잘 보여줄 수 있을까 고민했고 그 결과 이 사이트는 내가 여태까지 배웠던 기능들을 모두 조금씩 보여줄 수 있는 사이트가 되었습니다.",
+                "function": "간단한 자기 소개, 개발 경험 및 프로젝트 사이트 소개, 메일보내기, 방명록 등",
                 "links": {
-                    "git": "https://github.com/JiyongInSpace/",
-                    "deploy": "https://jiyonginspace.github.io/coinnet/#/"
+                    "git": "https://github.com/JiyongInSpace/portfolio",
+                    "deploy": "https://jiyonginspace.github.io/portfolio/"
                 },
                 "stacks": [
                     {
@@ -41,11 +45,13 @@
         },
         {
             "num": "PROJECT-03",
+            "color": "#25b4e6",
             "type": "Project",
             "title": "Atomy",
-            "simpleDetail": "바닐라JS를 이용한 풀페이지스크롤 클론 사이트입니다.",
+            "simpleDetail": "[프로젝트] 세계로 뻗어나가는 기업..이 아니라 나의 실력!",
             "modal":{
-                "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolorum incidunt? Esse fugit deserunt, eaque obcaecati beatae minima odio alias.",
+                "detail": "바닐라JS를 이용한 풀페이지스크롤 클론 사이트입니다.",
+                "function": "스크롤 이벤트로 화면 및 탭 전환, 반응형 슬라이드, svg 세계지도",
                 "links": {
                     "git": "https://github.com/JiyongInSpace/atomy",
                     "deploy": "https://jiyonginspace.github.io/atomy/"
@@ -68,11 +74,13 @@
     "practices":[
         {
             "num": "PRACTICE-01",
+            "color": "#f70555",
             "type": "Practice",
             "title": "Yongcha",
-            "simpleDetail": "[기능학습] react, axios, 영화DBapi 등을 이용한 영화 정보 사이트",
+            "simpleDetail": "[기능학습] 지금 가장 핫한 영화를 알려줘!",
             "modal":{
-                "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolorum incidunt? Esse fugit deserunt, eaque obcaecati beatae minima odio alias.",
+                "detail": "리액트의 기본기능을 배우기 위해 학습강의와 함께 제작한 첫 번째 리액트 사이트입니다. 원리를 이해하기 위해 훅을 사용하지 않고 클래스 컴포넌트의 기본부터 시작했고, Container Presenter 패턴을 사용했습니다. TMDB의 영화DB api를 axios로 불러오면서 async·await를 익힐 수 있는 기회가 되었습니다. 덕분에 동기&비동기의 개념에 조금 더 익숙해 질 수 있었습니다.",
+                "function": "영화와 TV쇼를 특정 섹션으로 불러오기, 영화의 자세한 정보 및 티저영상 목록 확인, api를 활용한 영화, 프로그램 검색",
                 "links": {
                     "git": "https://github.com/JiyongInSpace/yongcha",
                     "deploy": "https://brave-tesla-48f5ef.netlify.app/"
@@ -86,11 +94,13 @@
         },
         {
             "num": "PRACTICE-02",
+            "color": "black",
             "type": "Practice",
             "title": "ToDoMate",
-            "simpleDetail": "[협업프로젝트] 챌린지미션, 채팅봇 등이 있는 날짜별 투두리스트",
+            "simpleDetail": "[협업프로젝트] 오늘은 뭐해야했더라?",
             "modal":{
                 "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolorum incidunt? Esse fugit deserunt, eaque obcaecati beatae minima odio alias.",
+                "function": "ㅇㄹㄴㅇㄹ",
                 "links": {
                     "git": "https://github.com/JiyongInSpace/",
                     "deploy": "https://brave-tesla-48f5ef.netlify.app/"
@@ -110,11 +120,13 @@
         },
         {
             "num": "PRACTICE-03",
+            "color": "rgba(236, 180, 105)",
             "type": "Practice",
             "title": "Minideco",
-            "simpleDetail": "[기능학습] 디자인부터 시작해 다양한 기능을 넣은 쇼핑몰 사이트",
+            "simpleDetail": "[기능학습] 인형의집 쇼핑몰",
             "modal":{
-                "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolorum incidunt? Esse fugit deserunt, eaque obcaecati beatae minima odio alias.",
+                "detail": "바닐라 자바스크립트만을 이용해 쇼핑몰의 간단한 기능을 모두 구현해보았습니다. 처음 css를 배우기 시작하면서 만든 사이트이기 때문에, 다양한 태그와 스타일들을 이것저것 써보고, 여러가지 레이아웃을 만들어 볼 수 있는 기회가 되었습니다. JS와 로컬스토리지를 배우기 시작하면서, 제작된 레이아웃에 간단한 기능들을 적용해보고 응용해보는 연습장같은 사이트였기 때문에 만들면서 정말 재밌었습니다.",
+                "function": "local storage를 활용한 상품 장바구니에 담기 및 장바구니 물품 가격 계산, 좋아요한 상품 기억, 슬라이더, fetch로 json 데이터 불러오기",
                 "links": {
                     "git": "https://github.com/JiyongInSpace/minideco",
                     "deploy": "https://jiyonginspace.github.io/minideco/"
@@ -134,24 +146,26 @@
         },
         {
             "num": "PRACTICE-04",
+            "color": "#634a95",
             "type": "Practice",
-            "title": "Momentum",
-            "simpleDetail": "[기능학습] 간단한 정보를 확인할 수 있는 크롬 대기화면 사이트",
+            "title": "Card Maker",
+            "simpleDetail": "[기능학습]최애 포토카드 만들어드릴게요!",
             "modal":{
-                "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolorum incidunt? Esse fugit deserunt, eaque obcaecati beatae minima odio alias.",
+                "detail": "사이트를 만들면서 백엔드로 로컬스토리지와 캐시로는 한계를 느끼다, 찾게 된 것이 firebase였습니다. 이 Card Maker는 firebase의 기능을 학습하기 위해 만든 사이트입니다. 강의를 통해 만들었지만, 최근 v9로 변화가 있었기 때문에 바뀐 내용도 많았고 검색으로도 정보가 부족한 편이어서 공식 문서를 찾아보고 직접 적용 해볼 수 있는 기회가 되었습니다. ",
+                "function": "firebase의 인증기능을 통한 로그인 및 로그아웃, Form의 정보를 통해 명함 만들기, 계정마다 만든 명함을 realtime DB로 기억하기",
                 "links": {
-                    "git": "https://github.com/JiyongInSpace/momentum",
-                    "deploy": "https://jiyonginspace.github.io/momentum/"
+                    "git": "https://github.com/JiyongInSpace/card-maker",
+                    "deploy": "https://jiyonginspace.github.io/card-maker/#/"
                 },
                 "stacks": [
                     {
-                        "name": "html", "bgcolor": "E34F26", "fontcolor":"white", "icon": "html5"
+                        "name": "react", "bgcolor": "61DAFB", "fontcolor":"black", "icon": "react"
                     },
                     {
-                        "name": "css", "bgcolor": "1572B6", "fontcolor":"white", "icon": "css3"
+                        "name": "firebase", "bgcolor": "FFCA28", "fontcolor":"black", "icon": "firebase"
                     },
                     {
-                        "name": "javascript", "bgcolor": "F7DF1E", "fontcolor":"black", "icon": "javascript"
+                        "name": "cloudinary", "bgcolor": "3448c5", "fontcolor":"white", "icon": "googlecloud"
                     }
                 ]
             }

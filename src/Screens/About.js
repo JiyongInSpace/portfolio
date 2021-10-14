@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import skills from '../assets/skills';
 
-
 export default ({tab}) => {
     return (
     <Background ref={tab}>
@@ -13,7 +12,7 @@ export default ({tab}) => {
                 <Tab>
                     <TabTitle>
                         <TabIcon className="fas fa-user-astronaut"></TabIcon>
-                        Who is him?
+                        Who Is He?
                     </TabTitle>
                     <WhoAmI></WhoAmI>
                     <WhoAmIName>
@@ -168,6 +167,11 @@ const WhoAmI = styled.div`
     @media ${props => props.theme.mobile}{
         width: 60vw; height: 60vw;
     }
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid;
 `;
 const WhoAmIName = styled.h3`
     font-size: 1.5em;
@@ -185,14 +189,14 @@ const Icon = styled.i`
 `;
 const List = styled.h4`
     font-size: 1.1em;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     span{font-weight: bold;}
     @media ${props => props.theme.mobile}{
         text-align: center;
     }
 `;
 const Listdetail = styled.p`
-    margin-top: 10px;
+    margin-top: 5px;
     color: gray;
     font-size: 0.9em;
     line-height: 1.2em;
@@ -223,7 +227,8 @@ const AboutMeIcon = styled.div`
         margin: 10px;
     }
     &>span:nth-child(3){
-        font-size: 0.8em;
+        font-size: 0.9em;
+        letter-spacing: -0.05em;
     }
 
     @media ${props => props.theme.mobile}{

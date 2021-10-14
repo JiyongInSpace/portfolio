@@ -4,10 +4,10 @@ import Main from '../Screens/Main';
 import Header from './Header';
 
 
-export default () => (
+export default ({messageRepository}) => (
     <Router>
         <Header />
-        <Main />
+        <Main messageRepository={messageRepository}/>
     </Router>
 );
 

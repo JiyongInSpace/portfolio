@@ -1,10 +1,10 @@
-import minideco from './minideco.jpg';
+import minideco from './minideco.png';
 import yongcha from './yongcha.png';
 import todomate from './todomate.png';
 import coinnet from './coinnet.png';
 import atomy from './atomy.png';
-import momentum from './barista.png';
-import nothing from './nothing.png';
+import portfolio from './portfolio.png';
+import cardMaker from './card-maker.png';
 
 import shin from './shin.png';
 import toru from './to-ru.png';
@@ -18,7 +18,7 @@ const Img = [
         "modal" : [ shin, toru, nene ]
     },
     {
-        "card" : nothing,
+        "card" : portfolio,
         "modal" : [ masao, bo ]
     },
     {
@@ -38,7 +38,7 @@ const Img = [
         "modal" : [ shin, masao, bo ]
     },
     {
-        "card" : momentum,
+        "card" : cardMaker,
         "modal" : [ nene, shin, masao ]
     }
 ];

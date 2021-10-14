@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import pencil from '../assets/pencil.png';
-
+import paper from '../assets/paper.jpg';
 
 export default ({tab}) => {
+    let vh = 0;
+    useEffect(() => {
+        vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }, []);
+
     return(
     <Background ref={tab}>
         <Container>
-            <PostCard>
+            <PostCard img={paper}>
                 <CardBackFst>
                     <GreetingSubtitle>Portfolio</GreetingSubtitle>
                     Jal Butakdripnida.
@@ -16,7 +22,7 @@ export default ({tab}) => {
                     <div></div><div></div>
                 </CardBackSnd>
             </PostCard>
-            <PostCard>
+            <PostCard img={paper}>
                 <CardFst>
                     <GreetingTitle>Kim Ji Yong</GreetingTitle>
                     Front-end web developer
@@ -48,15 +54,14 @@ const Container = styled.article`
     
 `;
 const PostCard = styled.div`
-    width: 600px; height: 400px;
+    width: 700px; height: 450px;
     transition: 0.5s;
-    @media ${props => props.theme.tablet}{
-        width: 75vw; height: 50vw;
-        font-size: 1.7vw;
-    }
+    font-size: 1.3em;
     position: absolute;
     box-shadow: 3px 2px 10px 1px rgba(0, 0, 0, 0.3);
     background-color: white;
+    background-image: ${props => `url(${props.img})`};
+    background-size: 165%;
     padding: 30px;
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -70,7 +75,11 @@ const PostCard = styled.div`
         top: 50%; left: 40%;
         transform: translate(-50%, -25%) rotate(-5deg);
     }
+    @media ${props => props.theme.desktop}{width: 65vw; height: 37vw; font-size: 1.2em;}
+    @media ${props => props.theme.laptop}{font-size: 1em;}
     @media ${props => props.theme.tablet}{
+        width: 72vw; height: 43vw;
+        font-size: 1.60vw;
         &:first-child{
             top: 30%; right: 20px; left: unset;
             transform: rotate(10deg);
@@ -81,13 +90,13 @@ const PostCard = styled.div`
         }
     }
     @media ${props => props.theme.mobile}{
-        width: 70vw; height: 90vw;
+        width: 70vw; height: 80vw;
         grid-template-columns: 1fr 10px;
         grid-template-rows: 1fr 2fr 2fr;
         padding: 20px;
         grid-gap: 10px;
         &:first-child{
-            top: 30%; right: 5%; 
+            top: 28%; right: 10%; 
             transform: rotate(-10deg);
         }
         &:nth-child(2){
@@ -102,8 +111,13 @@ const Img = styled.img`
     top: 35%; left: 70%;
     transform: rotate(25deg);
     filter: drop-shadow(5px 5px 3px rgba(0, 0, 0, 0.4));
+    @media ${props => props.theme.mobile}{
+        left: unset; top: 50%; right: 30%;
+        height: 80vw;
+    }
 `
 const CardFst = styled.div`
+    
     @media ${props => props.theme.mobile}{
         grid-column: 1 / 3;
         grid-row: 1 / 2;
@@ -113,6 +127,7 @@ const GreetingTitle = styled.h1`
     font-size: 3.3em;
     font-weight: 700;
     margin-bottom: 10px;
+    letter-spacing: -0.02em;
     @media ${props => props.theme.mobile}{
         font-size: 5em;
     }
@@ -121,6 +136,7 @@ const CardSnd = styled.div`
     grid-column: 2 / 3;
     grid-row: 1 / 3;
     background: lightgray;
+    
     @media ${props => props.theme.mobile}{
         grid-column: 1 / 2;
         grid-row: 2 / 3;

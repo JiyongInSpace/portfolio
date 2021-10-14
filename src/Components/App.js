@@ -4,10 +4,10 @@ import Router from "./Router";
 import { ThemeProvider } from "styled-components";
 import theme from "./Theme";
 
-function App() {
+function App({messageRepository}) {
   return (
     <ThemeProvider theme={theme}>
-      <Router />
+      <Router messageRepository={messageRepository}/>
       <GlobalStyles />
     </ThemeProvider>
   );

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import ProjectModal from './ProjectModal';
 
 
-export default ({data, width, height, img, index, type}) => {
+export default ({data, width, height, img, index, type, lock, unlock}) => {
     const [modalVisible, setModalVisible] = useState(false);
     const openModal = () => {
         setModalVisible(true)
@@ -15,14 +15,14 @@ export default ({data, width, height, img, index, type}) => {
     return (
     <>
         <Container width={width} height={height} type={type}>
-            <Front bg={img[index].card} />
+            <Front bg={img[index].card} color={data.color} type={type}/>
             <Back>
                 <Num>{data.num}</Num>
                 <Title>{data.title}</Title>
                 <Detail>
                     {data.simpleDetail}
                 </Detail>
-                <Button onClick={openModal}>more</Button>
+                <Button onClick={() => {openModal(); lock();}}>more</Button>
             </Back>
         </Container>
         <ProjectModal
@@ -31,6 +31,7 @@ export default ({data, width, height, img, index, type}) => {
             visible={modalVisible}
             onClose={closeModal}
             img={img[index].modal}
+            unlock={unlock}
         />
     </>
 )};
@@ -38,14 +39,14 @@ export default ({data, width, height, img, index, type}) => {
 
 const Container = styled.div`
     width: ${props => props.width}; height: ${props => props.height};
-    &[type="project"]{
+    &[type="Project"]{
         @media ${props => props.theme.tablet}{width: 60%;}
         @media ${props => props.theme.mobile}{width: 80%; height: 50vh;}
     }
     position: relative;
     color: white;
     perspective: 2000px;
-    margin: 50px 0;
+    margin-top: 50px;
     &>div{
         width: 100%; height: 100%;
         backface-visibility: hidden;
@@ -67,15 +68,16 @@ const Front = styled.div`
     align-items: center;
     font-size: 1.5em;
     font-weight: bold;
-    background: white;
+    background-color: ${props => props.color};
     background-image: ${props => `url(${props.bg})`};
-    background-size: contain;
+    background-size: ${props => props.type === "project" ? "70%" : "150px"};
     background-position: center;
     background-repeat: no-repeat;
 `;
 const Back = styled.div`
     padding: 20px;
-    background: lightgray;
+    background: rgb(240,240,240);
+    color: rgba(0,0,0,0.9);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -84,6 +86,7 @@ const Back = styled.div`
 `;
 const Num = styled.span`
     font-size: 1.1em;
+    color: gray;
 `;
 const Title = styled.h4`
     font-size: 1.5em;
@@ -92,12 +95,14 @@ const Title = styled.h4`
 `
 const Detail = styled.p``
 const Button = styled.button`
-    padding: 3px;
+    padding: 7px;
+    font-size: 1.1em;
     margin-top: 15px;
-    background: inherit;
-    border: 1px solid white;
+    background: rgba(0,0,0,0.9); 
     color: white;
+    border: 1px solid;
     cursor: pointer;
     transition: 0.3s;
-    &:hover{background-color: white; color: gray;}
+    &:hover{opacity:0.7;}
+    &:active{transform: scale(0.95);}
 `;

@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ProjectCard from '../Components/ProjectCard';
 import data from '../db/data.json';
 import projectImg from '../assets/projectImg';
 
-export default ({tab}) => {
+
+
+
+export default ({tab, lock, unlock}) => {
+    
+
     return(
         <Background ref={tab}>
             <Container>
@@ -20,6 +25,8 @@ export default ({tab}) => {
                             width="28%" height="350px"
                             img={projectImg}
                             type="project"
+                            lock={lock}
+                            unlock={unlock}
                         />
                     ))}
                 </Section>
@@ -31,6 +38,8 @@ export default ({tab}) => {
                             width="200px" height="200px"
                             img={projectImg}
                             type="practice"
+                            lock={lock}
+                            unlock={unlock}
                         />
                     ))}
                 </Section>
@@ -42,7 +51,6 @@ export default ({tab}) => {
 const Background = styled.div`
     width: 100%;
     padding: 100px 0;
-    background-color: #f5f5f5;
 `;
 const Container = styled.article`
     width: 1180px;
@@ -54,7 +62,7 @@ const Container = styled.article`
 `;
 const Title = styled.h2`
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     font-size: 4em;
     font-weight: 800;
     @media ${props => props.theme.tablet}{font-size: 3em;}

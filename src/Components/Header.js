@@ -28,6 +28,10 @@ export default ({handleScroll}) => {
                         <span className="desktop">Contact</span>
                         <Icon className="far fa-envelope"></Icon>
                     </NLink>
+                    <NLink to="/guest" onClick={() => clickScroll(4)}>
+                        <span className="desktop">Guest</span>
+                        <Icon className="fas fa-clipboard"></Icon>
+                    </NLink>
                 </List>
             </Container>
         </Header>
@@ -44,8 +48,7 @@ const Header = styled.header`
     box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.7);
 `;
 const Container = styled.div`
     width: 1180px;
@@ -62,10 +65,10 @@ const List = styled.div`
     align-items: center;
 `;
 const Photo = styled.figure`
-    border: 3px solid;
-    width: 70px;
-    height: 70px;
-    border-radius: 40px;
+    background-color: lightgray;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
     margin-left: 15px;
 `;
 const NLink = styled(Link)`

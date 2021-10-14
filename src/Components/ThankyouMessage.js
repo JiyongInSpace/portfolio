@@ -14,7 +14,7 @@ export default () => {
     <Container className="thankyou_message">
         <ModalOverlay visible={modalVisible}>
             <Modal>
-                <Icon className="material-icons-outlined">send</Icon>
+                <Icon className="far fa-paper-plane" />
                 편지가 발송되었습니다. <br /> 관심을 가져주셔서 감사합니다.
                 <ExitBtn onClick={closeModal}>✖</ExitBtn>
             </Modal>
@@ -41,10 +41,11 @@ const Modal = styled.div`
     box-shadow: 3px 2px 5px 1px rgba(0, 0, 0, 0.3);
     line-height: 1.3em;
     position: relative;
+    z-index: 100;
 `
-const Icon = styled.span`
+const Icon = styled.i`
     margin-right: 10px;
-    font-size: 2.5em;
+    font-size: 1.7em;
 `;
 
 const ExitBtn = styled.div`

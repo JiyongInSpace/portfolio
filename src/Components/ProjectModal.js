@@ -4,24 +4,34 @@ import ModalSlider from './ModalSlider';
 import Stackicon from './Stackicon';
 
 
-const ProjectModal = ({title, data, visible, onClose, img}) => {
-    
-    
+const ProjectModal = ({title, data, visible, onClose, img, unlock}) => {
+    let vh = 0;
+    useEffect(() => {
+        vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }, []);
     
     return (
     <>
-        <Overlay visible={visible} onClick={onClose}>
+        <Overlay visible={visible} onClick={(e) => {onClose(e); unlock();}}>
             <Modal>
                 <ModalTitle>{title}</ModalTitle>
                 <ModalSlider img={img} />
                 <ModalSection>
                     <Stacks>
-                        {data.stacks.map(stack => (
-                            <Stackicon data={stack}/>
+                        {data.stacks.map((stack,index) => (
+                            <Stackicon key={`${title}${index}`} data={stack}/>
                         ))}
                     </Stacks>
                     <ModalDetail>
-                        {data.detail}
+                        <TabTitle>
+                            <TabIcon className="fas fa-question"/>설명
+                        </TabTitle>
+                        <TabDetail>{data.detail}</TabDetail>
+                        <TabTitle>
+                            <TabIcon className="fas fa-exclamation"/>주요 기능
+                        </TabTitle>
+                        <TabDetail>{data.function}</TabDetail>
                     </ModalDetail>
                     <Links>
                         <Link href={data.links.git} target="_blank">
@@ -32,7 +42,7 @@ const ProjectModal = ({title, data, visible, onClose, img}) => {
                         </Link>
                     </Links>
                 </ModalSection>
-                <Exit onClick={onClose}>✖</Exit>
+                <Exit onClick={(e) => {onClose(e); unlock();}}>✖</Exit>
             </Modal>
         </Overlay>
     </>
@@ -58,7 +68,9 @@ const Modal = styled.div`
     box-shadow: 3px 2px 5px 1px rgba(0, 0, 0, 0.3);
     
     @media ${props => props.theme.tablet}{width: 90%;}
-    @media ${props => props.theme.mobile}{width: 100vw; height: 100vh;}
+    @media ${props => props.theme.mobile}{
+        width: 100vw; height: calc(var(--vh, 1vh) * 100);
+        }
 `;
 const ModalTitle = styled.h2`
     position: absolute;
@@ -68,10 +80,11 @@ const ModalTitle = styled.h2`
 `;
 const ModalSection = styled.div`
     height: 50%;
-    padding: 10px;
+    padding: 10px 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: #f5f5f5;
     @media ${props => props.theme.mobile}{height: 65%;}
 `;
 const Stacks = styled.div`
@@ -80,8 +93,30 @@ const Stacks = styled.div`
 `
 const ModalDetail = styled.div`
     flex-grow: 1;
-    padding: 10px 20px;
+    padding: 20px 30px;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 15px;
+    &::-webkit-scrollbar{width:5px;}
+    &::-webkit-scrollbar-thumb{background-color: black;}
+    &::-webkit-scrollbar-track{background-color: silver;}
 `
+const TabTitle = styled.h3`
+    font-size: 1.2em;
+    font-weight: 700;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    display: flex; align-items: baseline;
+    border-bottom: 1px solid lightgray;
+    i{margin-right: 5px;}
+`;
+const TabDetail = styled.p`
+    margin-bottom: 20px;
+    line-height: 1.5em;
+`;
+const TabIcon = styled.i`
+    margin-right: 5px;
+`;
 const Links = styled.div`
     display: flex;
     align-items: center;
