@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.ffa24a4c.chunk.css",
-    "main.js": "/static/js/main.8a9d4d30.chunk.js",
-    "main.js.map": "/static/js/main.8a9d4d30.chunk.js.map",
+    "main.js": "/static/js/main.17d9842c.chunk.js",
+    "main.js.map": "/static/js/main.17d9842c.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d0605945.js",
     "runtime-main.js.map": "/static/js/runtime-main.d0605945.js.map",
     "static/js/2.3f94aec9.chunk.js": "/static/js/2.3f94aec9.chunk.js",
@@ -27,7 +27,7 @@
     "static/media/paper.3fde22c9.jpg": "/static/media/paper.3fde22c9.jpg",
     "static/media/pencil.e54809f9.png": "/static/media/pencil.e54809f9.png",
     "static/media/portfolio.a3cdf3b2.png": "/static/media/portfolio.a3cdf3b2.png",
-    "static/media/portfolio1.17d89549.png": "/static/media/portfolio1.17d89549.png",
+    "static/media/portfolio1.07f9719c.png": "/static/media/portfolio1.07f9719c.png",
     "static/media/react.20adfb35.png": "/static/media/react.20adfb35.png",
     "static/media/todomate.1a3f9a7c.png": "/static/media/todomate.1a3f9a7c.png",
     "static/media/todomate1.bd7d710e.png": "/static/media/todomate1.bd7d710e.png",
@@ -38,6 +38,6 @@
     "static/js/runtime-main.d0605945.js",
     "static/js/2.3f94aec9.chunk.js",
     "static/css/main.ffa24a4c.chunk.css",
-    "static/js/main.8a9d4d30.chunk.js"
+    "static/js/main.17d9842c.chunk.js"
   ]
 }
