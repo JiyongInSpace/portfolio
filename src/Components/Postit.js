@@ -29,9 +29,25 @@ const Container = styled.li`
                 return `url(${postt})`
         }
     }};
+    font-family: ${props => {
+        switch(props.id % 4){
+            case 1 :
+                return 'drfont_daraehand';
+            case 2 :
+                return 'KyoboHand';
+            case 3 :
+                return 'UhBeeibuson'
+            default :
+                return 'KOTRA_SONGEULSSI'
+        }
+    }};
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    box-shadow: -2px -2px 8px rgba(255, 255, 255, 0.4),
+        -2px -2px 12px rgba(255, 255, 255, 0.5),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+        2px 2px 8px rgba(0, 0, 0, 0.5);
     padding: 30px 20px 10px 20px;
     @media ${props => props.theme.laptop}{
         width: 24%;

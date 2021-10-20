@@ -1,28 +1,34 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import ProjectModal from './ProjectModal';
-
+import paper from '../assets/paper.jpg';
+import Texture from './Texture';
 
 export default ({data, width, height, img, index, type, lock, unlock}) => {
     const [modalVisible, setModalVisible] = useState(false);
     const openModal = () => {
-        setModalVisible(true)
+        setModalVisible(true);
+        lock();
     }
     const closeModal = (e) => {
         (e.target === e.currentTarget) && setModalVisible(false);
+        (e.target === e.currentTarget) && unlock();
     }
 
     return (
     <>
         <Container width={width} height={height} type={type}>
-            <Front bg={img[index].card} color={data.color} type={type}/>
+            <Front bg={img[index].card} color={data.color} type={type}>
+                <Texture />
+                <Texture />
+            </Front>
             <Back>
                 <Num>{data.num}</Num>
                 <Title>{data.title}</Title>
                 <Detail>
                     {data.simpleDetail}
                 </Detail>
-                <Button onClick={() => {openModal(); lock();}}>more</Button>
+                <Button onClick={openModal}>more</Button>
             </Back>
         </Container>
         <ProjectModal
@@ -30,7 +36,7 @@ export default ({data, width, height, img, index, type, lock, unlock}) => {
             data={data.modal}
             visible={modalVisible}
             onClose={closeModal}
-            img={img[index].modal}
+            img={img[index]}
             unlock={unlock}
         />
     </>
@@ -47,12 +53,16 @@ const Container = styled.div`
     color: white;
     perspective: 2000px;
     margin-top: 50px;
+    
     &>div{
         width: 100%; height: 100%;
         backface-visibility: hidden;
         transition: 1s;
         border-radius: 10px;
-        box-shadow: 3px 2px 5px 1px rgba(0, 0, 0, 0.3);
+        box-shadow: -2px -2px 8px rgba(255, 255, 255, 0.4),
+        -2px -2px 12px rgba(255, 255, 255, 0.5),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+        2px 2px 8px rgba(0, 0, 0, 0.3);
     }
     &:hover{
         &>div:first-child{transform: rotateY(180deg);}
@@ -71,12 +81,14 @@ const Front = styled.div`
     background-color: ${props => props.color};
     background-image: ${props => `url(${props.bg})`};
     background-size: ${props => props.type === "project" ? "70%" : "150px"};
+    background-size: ${props => (props.color === "#f70555")&&("120px")};
     background-position: center;
     background-repeat: no-repeat;
 `;
 const Back = styled.div`
     padding: 20px;
-    background: rgb(240,240,240);
+    background-image: url(${paper});
+    background-size: 165%;
     color: rgba(0,0,0,0.9);
     display: flex;
     flex-direction: column;

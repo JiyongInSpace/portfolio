@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import ThankyouMessage from '../Components/ThankyouMessage';
-import paper from '../assets/paper.jpg';
 import kakaostamp from "../assets/kakao_stamp.png";
 import githubstamp from "../assets/git_stamp.png";
+import paper from '../assets/paper.jpg';
 
-export default ({tab}) => {
+
+export default ({tab, containerTab}) => {
+    
     
     return (
         <Background ref={tab}>
-            <Container>
+            <Container ref={containerTab}>
                 <Title>CONTACT</Title>
                 <Subtitle>발전하는 신입개발자가 필요하시다면 아래 우편을 확인해주세요.</Subtitle>
-                <Postcard img={paper}>
+                <Postcard>
                     <Form
                         className="gform"
                         method="POST"
@@ -40,6 +42,7 @@ export default ({tab}) => {
                         <CardTextTitle>받는 사람</CardTextTitle>
                         <CardTextContent>
                             <span>신입 웹 프론트엔드 개발자 김지용</span>
+                            <span>blaziken@naver.com</span>
                             <NumBox>
                                 <Num>0</Num><Num>1</Num><Num>0</Num>-
                                 <Num>3</Num><Num>5</Num><Num>4</Num><Num>3</Num>-
@@ -67,11 +70,18 @@ const Container = styled.article`
     @media ${props => props.theme.desktop}{
         width: 100%;
     }
+    transition: 2s;
+    opacity: 0;
+    transform: translateY(5%);
+    &.show{
+        opacity: 1;
+        transform: translateY(0);
+    }
 `;
 const Title = styled.h2`
+    font-family: 'Black Han Sans', sans-serif;
     font-size: 4em;
     text-align: center;
-    font-weight: 800;
     @media ${props => props.theme.tablet}{font-size: 3em;}
     @media ${props => props.theme.mobile}{font-size: 2em;}
 `;
@@ -84,11 +94,15 @@ const Postcard = styled.section`
     width: 900px; height: 500px;
     margin: 0 auto;
     position: relative;
-    box-shadow: 3px 2px 5px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: -2px -2px 8px rgba(255, 255, 255, 0.4),
+        -2px -2px 12px rgba(255, 255, 255, 0.5),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+        2px 2px 8px rgba(0, 0, 0, 0.3);
     display: grid;
     grid-template-columns: 60% 40%;
     grid-template-rows: 30% 70%;
-    background: white;
+    background-image: url(${paper});
+    background-size: 165%;
     @media ${props => props.theme.tabletL}{
         width: 100%; height: unset;
     }
@@ -132,7 +146,9 @@ const CardTextContent = styled.div`
     @media ${props => props.theme.tabletL}{
         padding: 0 10px 0 0;
     }
-    
+    span{
+        line-height: 1.5em;
+    }
 `;
 const NumBox = styled.div`
     display: flex;
@@ -168,8 +184,8 @@ const Stamps = styled.div`
 const Stamp = styled.a`
     display: block;
     width: 90px; height: 120px;
-    background-color: white;
     transition: 0.3s;
+    margin-left: 10px;
     &:hover{
         transform: scale(1.05);
     }

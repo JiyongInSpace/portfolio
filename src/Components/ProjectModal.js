@@ -1,10 +1,9 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components';
-import ModalSlider from './ModalSlider';
 import Stackicon from './Stackicon';
 
 
-const ProjectModal = ({title, data, visible, onClose, img, unlock}) => {
+const ProjectModal = ({title, data, visible, onClose, img}) => {
     let vh = 0;
     useEffect(() => {
         vh = window.innerHeight * 0.01;
@@ -13,11 +12,11 @@ const ProjectModal = ({title, data, visible, onClose, img, unlock}) => {
     
     return (
     <>
-        <Overlay visible={visible} onClick={(e) => {onClose(e); unlock();}}>
+        <Overlay visible={visible} onClick={onClose}>
             <Modal>
                 <ModalTitle>{title}</ModalTitle>
-                <ModalSlider img={img} />
-                <ModalSection>
+                <ModalGif img={img.modal} res={img.res}/>
+                <ModalSection res={img.res}>
                     <Stacks>
                         {data.stacks.map((stack,index) => (
                             <Stackicon key={`${title}${index}`} data={stack}/>
@@ -42,7 +41,7 @@ const ProjectModal = ({title, data, visible, onClose, img, unlock}) => {
                         </Link>
                     </Links>
                 </ModalSection>
-                <Exit onClick={(e) => {onClose(e); unlock();}}>✖</Exit>
+                <Exit onClick={onClose}>✖</Exit>
             </Modal>
         </Overlay>
     </>
@@ -61,11 +60,13 @@ const Overlay = styled.div`
     z-index: 100;
 `;
 const Modal = styled.div`
-    width: 700px; height: 90vh;
+    width: 700px; height: 700px;
     background-color: white;
     position: relative;
     border-radius: 12px;
     box-shadow: 3px 2px 5px 1px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
     
     @media ${props => props.theme.tablet}{width: 90%;}
     @media ${props => props.theme.mobile}{
@@ -78,14 +79,44 @@ const ModalTitle = styled.h2`
     z-index: 1;
     font-size: 2em; font-weight: 600;
 `;
+const ModalGif = styled.div`
+    height: 50%;
+    @media ${props => props.theme.mobile}{height: 35%;}
+    background-image: ${props => `url(${props.img})`};
+    background-size: ${props => props.res ? "75%" : "55%"};
+    background-position: bottom;
+    background-repeat: no-repeat;
+    @media ${props => props.theme.tablet}{
+        background-size: ${props => props.res ? "85%" : "55%"};
+        height: 52vw;
+        }
+    @media ${props => props.theme.mobile}{
+        background-size: ${props => props.res ? "90%" : "80%"};
+        height: ${props => props.res ? "70vw" : "80vw"};
+        }
+    @media ${props => props.theme.mobileS}{
+        background-size: ${props => props.res ? "90%" : "90%"};
+        height: ${props => props.res ? "80vw" : "95vw"};
+        }
+`;
+
 const ModalSection = styled.div`
     height: 50%;
+    @media ${props => props.theme.tablet}{
+        height: calc(100% - 52vw);
+        }
+    @media ${props => props.theme.mobile}{
+        height: ${props => props.res ? "calc(100% - 70vw)" : "calc(100% - 80vw)"};
+        }
+    @media ${props => props.theme.mobileS}{
+        height: ${props => props.res ? "calc(100% - 80vw)" : "calc(100% - 95vw)"};
+        }
     padding: 10px 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: #f5f5f5;
-    @media ${props => props.theme.mobile}{height: 65%;}
+    border-radius: 0 0 12px 12px;
 `;
 const Stacks = styled.div`
     text-align: center;

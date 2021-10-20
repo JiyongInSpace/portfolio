@@ -5,7 +5,7 @@ class MessageRepository {
         this.db = getDatabase();
     }
     syncMessages(onUpdate){
-        const messageRef = ref(this.db, "message"+1);
+        const messageRef = ref(this.db, "message");
         onValue(messageRef, (message) => {
             const data = message.val();
             data && onUpdate(data);
@@ -13,7 +13,7 @@ class MessageRepository {
         return () => off(messageRef);
     }
     saveMessage(message){
-        set(ref(this.db, "message"+1), message);
+        set(ref(this.db, "message"), message);
     }
 }
 

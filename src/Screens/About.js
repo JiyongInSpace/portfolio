@@ -1,11 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import skills from '../assets/skills';
+import aboutMeImg from '../assets/aboutMe.png';
+import paper from '../assets/paper.jpg';
 
-export default ({tab}) => {
+
+export default ({tab, containerTab}) => {
+
+    
     return (
     <Background ref={tab}>
-        <Container>
+        <Container ref={containerTab}>
             <Title>ABOUT</Title>
             <Subtitle>제 상태는 현재진행형입니다!</Subtitle>
             <Section>
@@ -14,29 +19,30 @@ export default ({tab}) => {
                         <TabIcon className="fas fa-user-astronaut"></TabIcon>
                         Who Is He?
                     </TabTitle>
-                    <WhoAmI></WhoAmI>
+                    <WhoAmI img={aboutMeImg}></WhoAmI>
                     <WhoAmIName>
                     김지용
                     </WhoAmIName>
                     <WhoAmITxt>
                         
-                    개발자가 되고 싶어 회사를 그만두고 개발을 공부하고 있습니다. 결코 빠른 시작이 아닌 걸 잘 알기에 남들보다 더 노력하려고 합니다.
+                    개발자가 되고 싶어 회사를 그만두고 개발을 공부하고 있습니다.<br />
+                    결코 빠른 시작이 아닌 걸 잘 알기에 남들보다 더 노력하려고 합니다.
                     </WhoAmITxt>
                     <TabContent>
                         <AboutMeIcon>
                         <Icon className="fas fa-dumbbell"></Icon>
                         <span>DILIGENT</span>
-                        <span>초심을 잃지 않는 개발자입니다. </span>
+                        <span>초심을 잃지 않겠습니다. </span>
                         </AboutMeIcon>
                         <AboutMeIcon>
                         <Icon className="fas fa-seedling"></Icon>
                         <span>GROWING</span>
-                        <span>하루하루 성장하는 개발자입니다.</span>
+                        <span>하루하루 성장하겠습니다.</span>
                         </AboutMeIcon>
                         <AboutMeIcon>
                         <Icon className="far fa-laugh-squint"></Icon>
                         <span>ENJOYING</span>
-                        <span>코딩을 즐기는 개발자입니다. </span>
+                        <span>코딩을 즐기겠습니다. </span>
                         </AboutMeIcon>
                     </TabContent>
                     
@@ -93,15 +99,22 @@ const Container = styled.article`
     width: 1180px;
     margin: 0 auto;
     padding: 20px;
+    transition: 2s;
     @media ${props => props.theme.desktop}{
         width: 100%;
     }
+    opacity: 0;
+    transform: translateY(5%);
+    &.show{
+        opacity: 1;
+        transform: translateY(0);
+    }
 `;
 const Title = styled.h2`
+    font-family: 'Black Han Sans', sans-serif;
     text-align: center;
     margin-bottom: 30px;
     font-size: 4em;
-    font-weight: 800;
     @media ${props => props.theme.tablet}{font-size: 3em;}
     @media ${props => props.theme.mobile}{font-size: 2em;}
 `;
@@ -130,22 +143,27 @@ const Section = styled.section`
 const Tab = styled.div`
     padding: 30px ;
     border-radius: 10px;
-    box-shadow: 3px 2px 5px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: -2px -2px 8px rgba(255, 255, 255, 0.4),
+        -2px -2px 12px rgba(255, 255, 255, 0.5),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+        2px 2px 8px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    background-image: url(${paper});
+    background-size: 165%;
     @media ${props => props.theme.mobile}{
-        padding: 15px;
+        padding: 30px 15px 20px 15px;
     }
 `;
 const TabTitle = styled.h4`
     font-size: 2.2em;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     @media ${props => props.theme.mobile}{
         letter-spacing: -0.05em;
-        font-size: 2em;
+        font-size: 1.5em;
     }
 `;
 const TabIcon = styled.i`
@@ -155,6 +173,7 @@ const TabContent = styled.div`
     line-height: 1.5em;
     display: flex;
     justify-content: space-around;
+    align-items: flex-end;
     width: 100%;
     flex-wrap: wrap;
     
@@ -163,15 +182,15 @@ const WhoAmI = styled.div`
     width: 250px; height: 250px;
     margin: 0 auto;
     border-radius: 50%;
-    background-color: lightgray;
     @media ${props => props.theme.mobile}{
         width: 60vw; height: 60vw;
     }
-    
+    background-image: ${props => `url(${props.img})`};
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    border: 2px solid;
+    border: 5px solid lightgray;
+    
 `;
 const WhoAmIName = styled.h3`
     font-size: 1.5em;
@@ -183,22 +202,27 @@ const WhoAmITxt = styled.div`
     margin: 5px 0 20px 0;
     font-size: 0.9em;
     line-height: 1.4em;
+    text-align: center;
+    color: black;
+    opacity: 0.9;
 `;
 const Icon = styled.i`
     font-size: 5.5em;
+    &.fa-dumbbell{font-size: 5em;}
 `;
 const List = styled.h4`
     font-size: 1.1em;
-    margin-bottom: 15px;
     span{font-weight: bold;}
+    &:nth-child(2){margin: 18px 0;}
     @media ${props => props.theme.mobile}{
         text-align: center;
     }
 `;
 const Listdetail = styled.p`
-    margin-top: 5px;
-    color: gray;
-    font-size: 0.9em;
+    margin-top: 8px;
+    color: black;
+    opacity: 0.9;
+    font-size: 0.85em;
     line-height: 1.2em;
     @media ${props => props.theme.mobile}{
         margin-bottom: 20px;
@@ -224,11 +248,13 @@ const AboutMeIcon = styled.div`
     &>span:nth-child(2){
         font-size: 1.5em;
         font-weight: 600;
-        margin: 10px;
+        margin: 3px 0 10px 0;
     }
     &>span:nth-child(3){
         font-size: 0.9em;
         letter-spacing: -0.05em;
+        color: black;
+        opacity: 0.9;
     }
 
     @media ${props => props.theme.mobile}{

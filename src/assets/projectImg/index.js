@@ -6,40 +6,49 @@ import atomy from './atomy.png';
 import portfolio from './portfolio.png';
 import cardMaker from './card-maker.png';
 
-import shin from './shin.png';
-import toru from './to-ru.png';
-import nene from './nene.png';
-import bo from './bo-.png';
-import masao from './masao.png';
+import coinnetM from './coinnet1.png';
+import yongchaM from './yongcha1.png';
+import cardMakerM from './card-maker1.png';
+import todomateM from './todomate1.png';
+import atomyM from './atomy1.png';
+import minidecoM from './minideco1.png';
+import portfolioM from './portfolio1.png';
 
 const Img = [
     {
         "card" : coinnet,
-        "modal" : [ shin, toru, nene ]
+        "modal" : coinnetM,
+        "res" : false
     },
     {
         "card" : portfolio,
-        "modal" : [ masao, bo ]
+        "modal" : portfolioM,
+        "res" : true
     },
     {
         "card" : atomy,
-        "modal" : [ shin, toru, nene ]
+        "modal" : atomyM,
+        "res" : true
     },
     {
         "card" : yongcha,
-        "modal" : [ masao, bo, nene, shin ]
+        "modal" : yongchaM,
+        "res" : false
     },
     {
         "card" : todomate,
-        "modal" : [ shin, toru, nene ]
+        "modal" : todomateM,
+        "res" : false
     },
     {
         "card" : minideco,
-        "modal" : [ shin, masao, bo ]
+        "modal" : minidecoM,
+        "res" : true
     },
     {
         "card" : cardMaker,
-        "modal" : [ nene, shin, masao ]
+        "modal" : cardMakerM,
+        "res" : false
     }
 ];
 

@@ -7,12 +7,12 @@ import projectImg from '../assets/projectImg';
 
 
 
-export default ({tab, lock, unlock}) => {
+export default ({tab, lock, unlock, containerTab}) => {
     
 
     return(
         <Background ref={tab}>
-            <Container>
+            <Container ref={containerTab}>
                 <Title>PROJECT</Title>
                 <Subtitle>그동안 공부를 하면서 만들어온 발자취들입니다.
                         <br/>모든 사이트들은 계속해서 업데이트 될 예정입니다!
@@ -59,12 +59,19 @@ const Container = styled.article`
     @media ${props => props.theme.desktop}{
         width: 100%;
     }
+    opacity: 0;
+    transition: 2s;
+    transform: translateY(5%);
+    &.show{
+        opacity: 1;
+        transform: translateY(0);
+    }
 `;
 const Title = styled.h2`
     text-align: center;
     margin-bottom: 30px;
+    font-family: 'Black Han Sans', sans-serif;
     font-size: 4em;
-    font-weight: 800;
     @media ${props => props.theme.tablet}{font-size: 3em;}
     @media ${props => props.theme.mobile}{font-size: 2em;}
 `;

@@ -6,23 +6,25 @@ import Postit from '../Components/Postit';
 
 
 
-export default ({tab, messageRepository}) => {
+export default ({tab, messageRepository, lock, unlock, containerTab}) => {
     const [messages, setMessages] = useState([]);
     const [formVisible, setFormVisible] = useState(false);
 
     const showForm = () => {
         setFormVisible(true);
+        lock();
     }
     const hideForm = e => {
         e.preventDefault();
         setFormVisible(false);
+        unlock();
     }
     const makePostit = (postit) => {
         const updated = [postit, ...messages];
-        // const updatedSnd = [portit, ...messages];
         setMessages(updated);
-        messageRepository.saveMessage(updated)
+        messageRepository.saveMessage(updated);
         setFormVisible(false);
+        unlock();
     }
     useEffect(() => {
         const stopSync = messageRepository.syncMessages(messages => setMessages(messages));
@@ -31,7 +33,7 @@ export default ({tab, messageRepository}) => {
     
     return(
     <Background ref={tab}>
-        <Container>
+        <Container ref={containerTab}>
             <Title>GUEST BOOK</Title>
             <Subtitle>짧은 글 하나 남겨주시면 감사하겠습니다.</Subtitle>
             <Btn onClick={showForm}><i className="fas fa-plus"></i></Btn>
@@ -58,12 +60,19 @@ const Container = styled.article`
     margin: 0 auto;
     position: relative;
     @media ${props => props.theme.desktop}{width: 100%;}
+    transition: 2s;
+    opacity: 0;
+    transform: translateY(5%);
+    &.show{
+        opacity: 1;
+        transform: translateY(0);
+    }
 `;
 const Title = styled.h2`
     text-align: center;
     margin-bottom: 30px;
+    font-family: 'Black Han Sans', sans-serif;
     font-size: 4em;
-    font-weight: 800;
     @media ${props => props.theme.tablet}{font-size: 3em;}
     @media ${props => props.theme.mobile}{font-size: 2em;}
 `;
@@ -89,5 +98,12 @@ const Btn = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    &:hover{transform: rotate(180deg)}
+    box-shadow: -2px -2px 8px rgba(255, 255, 255, 0.4),
+        -2px -2px 12px rgba(255, 255, 255, 0.5),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+        2px 2px 8px rgba(0, 0, 0, 0.3);
+    &:hover{box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
+    inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 8px rgba(0, 0, 0, 0.15);}
 `;

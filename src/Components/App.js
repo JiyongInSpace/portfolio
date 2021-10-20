@@ -3,6 +3,7 @@ import GlobalStyles from "./GlobalStyles";
 import Router from "./Router";
 import { ThemeProvider } from "styled-components";
 import theme from "./Theme";
+import '../font.css';
 
 function App({messageRepository}) {
   return (
