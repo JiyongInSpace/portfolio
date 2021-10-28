@@ -64,6 +64,7 @@ const List = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    font-size: 1.1em;
 `;
 const Photo = styled.figure`
     background-color: lightgray;

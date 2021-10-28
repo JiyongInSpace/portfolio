@@ -12,19 +12,16 @@ export default ({tab, messageRepository, lock, unlock, containerTab}) => {
 
     const showForm = () => {
         setFormVisible(true);
-        lock();
     }
     const hideForm = e => {
         e.preventDefault();
         setFormVisible(false);
-        unlock();
     }
     const makePostit = (postit) => {
         const updated = [postit, ...messages];
         setMessages(updated);
         messageRepository.saveMessage(updated);
         setFormVisible(false);
-        unlock();
     }
     useEffect(() => {
         const stopSync = messageRepository.syncMessages(messages => setMessages(messages));
@@ -33,7 +30,7 @@ export default ({tab, messageRepository, lock, unlock, containerTab}) => {
     
     return(
     <Background ref={tab}>
-        <Container ref={containerTab}>
+        <Container ref={containerTab} data-pathname="/guest">
             <Title>GUEST BOOK</Title>
             <Subtitle>짧은 글 하나 남겨주시면 감사하겠습니다.</Subtitle>
             <Btn onClick={showForm}><i className="fas fa-plus"></i></Btn>

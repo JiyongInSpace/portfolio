@@ -10,7 +10,7 @@ export default ({tab, containerTab}) => {
     
     return (
     <Background ref={tab}>
-        <Container ref={containerTab}>
+        <Container ref={containerTab} data-pathname="/about">
             <Title>ABOUT</Title>
             <Subtitle>제 상태는 현재진행형입니다!</Subtitle>
             <Section>

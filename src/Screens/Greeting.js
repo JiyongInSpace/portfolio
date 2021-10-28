@@ -13,7 +13,7 @@ export default ({tab, containerTab}) => {
 
     return(
     <Background ref={tab}>
-        <Container ref={containerTab}>
+        <Container ref={containerTab} data-pathname="/">
             <PostCard img={paper}>
                 <CardBackFst>
                     <GreetingSubtitle>Portfolio</GreetingSubtitle>

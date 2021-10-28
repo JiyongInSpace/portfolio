@@ -36,9 +36,9 @@ const ProjectModal = ({title, data, visible, onClose, img}) => {
                         <Link href={data.links.git} target="_blank">
                             <Icon className="fas fa-code"></Icon>
                         </Link>
-                        <Link href={data.links.deploy} target="_blank">
+                        {data.links.deploy && <Link href={data.links.deploy} target="_blank">
                             <Icon className="fas fa-external-link-alt"></Icon>
-                        </Link>
+                        </Link>}
                     </Links>
                 </ModalSection>
                 <Exit onClick={onClose}>✖</Exit>

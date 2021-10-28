@@ -11,7 +11,7 @@ export default ({tab, containerTab}) => {
     
     return (
         <Background ref={tab}>
-            <Container ref={containerTab}>
+            <Container ref={containerTab} data-pathname="/contact">
                 <Title>CONTACT</Title>
                 <Subtitle>발전하는 신입개발자가 필요하시다면 아래 우편을 확인해주세요.</Subtitle>
                 <Postcard>
@@ -42,7 +42,7 @@ export default ({tab, containerTab}) => {
                         <CardTextTitle>받는 사람</CardTextTitle>
                         <CardTextContent>
                             <span>신입 웹 프론트엔드 개발자 김지용</span>
-                            <span>blaziken@naver.com</span>
+                            <span>gd693020@gmail.com</span>
                             <NumBox>
                                 <Num>0</Num><Num>1</Num><Num>0</Num>-
                                 <Num>3</Num><Num>5</Num><Num>4</Num><Num>3</Num>-

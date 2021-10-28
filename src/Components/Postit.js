@@ -41,6 +41,18 @@ const Container = styled.li`
                 return 'KOTRA_SONGEULSSI'
         }
     }};
+    font-size: ${props => {
+        switch(props.id % 4){
+            case 1 :
+                return '1.2em';
+            case 2 :
+                return '1.3em';
+            case 3 :
+                return '1.3em'
+            default :
+                return '1.1em'
+        }
+    }};
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -63,6 +75,10 @@ const Container = styled.li`
     @media ${props => props.theme.mobileS}{
         display: ${props => props.idx >= 4 ? "none" : "block"};
         width: 80%;
+    }
+    transition: 0.3s;
+    &:hover{
+        transform: translateY(-5%);
     }
 `;
 const User = styled.h6`

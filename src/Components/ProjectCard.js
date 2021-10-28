@@ -79,7 +79,7 @@ const Front = styled.div`
     font-size: 1.5em;
     font-weight: bold;
     background-color: ${props => props.color};
-    background-image: ${props => `url(${props.bg})`};
+    background-image: ${props => props.bg ? `url(${props.bg})` : "unset"};
     background-size: ${props => props.type === "project" ? "70%" : "150px"};
     background-size: ${props => (props.color === "#f70555")&&("120px")};
     background-position: center;

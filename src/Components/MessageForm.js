@@ -37,7 +37,6 @@ export default MessageForm;
 
 const Layout = styled.div`
     position: fixed;
-    background-color: rgba(255,255,255,0.3);
     top: 0; left: 0; right: 0; bottom: 0;
     justify-content: center; align-items: center;
     display: ${props => props.visible ? "flex" : "none"};

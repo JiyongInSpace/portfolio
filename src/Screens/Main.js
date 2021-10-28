@@ -31,7 +31,7 @@ export default ({messageRepository}) => {
     const tabRef = useRef([]);
     const containerRef = useRef([]);
     const [currentTab, setCurrentTab] = useState("/");
-
+    
     const scrollTo = (num) => {
         tabRef.current[num].scrollIntoView({behavior: "smooth"});
     }
@@ -41,21 +41,36 @@ export default ({messageRepository}) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("show");
-                entry.target.dataset.pathname && setCurrentTab(entry.target.dataset.pathname);
             } else {
                 entry.target.classList.remove("show");
             }
         });
     };
-    const options = { rootMargin: '10% 0px', threshold: 0.1 };
+    const options = { rootMargin: '10% 0px', threshold: ["0.1"] };
     useEffect(() => {
         const io = new IntersectionObserver(onIntersect, options);
-
         tabRef.current.forEach(current => current && io.observe(current));
         containerRef.current.forEach(current => current && io.observe(current));
         return () => io.disconnect();
 
     }, [tabRef]);
+    useEffect(() => {
+        window.addEventListener("scroll", tabNow);
+        return () => window.removeEventListener("scroll", tabNow);
+    }, []);
+    const tabNow = (e) => {
+        if(tabRef.current[4].getBoundingClientRect().top <= 10){
+            setCurrentTab("/guest");
+        } else if(tabRef.current[3].getBoundingClientRect().top <= 10){
+            setCurrentTab("/contact");
+        } else if(tabRef.current[2].getBoundingClientRect().top <= 10){
+            setCurrentTab("/project");
+        } else if(tabRef.current[1].getBoundingClientRect().top <= 10){
+            setCurrentTab("/about");
+        } else if(tabRef.current[0].getBoundingClientRect().top <= 10){
+            setCurrentTab("/");
+        }
+    }
 
     return (
     <>

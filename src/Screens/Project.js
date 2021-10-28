@@ -12,7 +12,7 @@ export default ({tab, lock, unlock, containerTab}) => {
 
     return(
         <Background ref={tab}>
-            <Container ref={containerTab}>
+            <Container ref={containerTab} data-pathname="/project">
                 <Title>PROJECT</Title>
                 <Subtitle>그동안 공부를 하면서 만들어온 발자취들입니다.
                         <br/>모든 사이트들은 계속해서 업데이트 될 예정입니다!
@@ -60,11 +60,9 @@ const Container = styled.article`
         width: 100%;
     }
     opacity: 0;
-    transition: 2s;
-    transform: translateY(5%);
+    transition: 3s;
     &.show{
         opacity: 1;
-        transform: translateY(0);
     }
 `;
 const Title = styled.h2`
